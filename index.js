@@ -27,16 +27,15 @@ alexaApp.express({
 app.set("view engine", "ejs");
 
 alexaApp.launch(function (request, response) {
-  response.say("You launched the app!");
+  response.say("You launched web demo!");
 });
 
 alexaApp.intent("number", {
-  "slots": { "digit": "AMAZON.NUMBER" },
-  "utterances": ["say the number {-|digit}"]
+  "slots": {},
+  "utterances": ["greet me"]
 },
   function (request, response) {
-    var number = request.slot("digit");
-    response.say("You asked for the number " + number);
+    response.say("Namaskar India");
   }
 );
 
