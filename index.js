@@ -27,7 +27,7 @@ alexaApp.express({
 app.set("view engine", "ejs");
 
 alexaApp.launch(function (request, response) {
-  response.say("You launched web demo!");
+  response.say("welcome to web demo!");
 });
 
 alexaApp.intent("greeting", function (request, response) {
