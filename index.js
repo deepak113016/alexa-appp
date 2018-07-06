@@ -30,9 +30,12 @@ alexaApp.launch(function (request, response) {
   response.say("welcome to web demo!");
 });
 
-
-alexaApp.intent("vacation", function(request, response) {
-  response.say("You're now on vacation.");
-});
+alexaApp.intent("vacation",
+  {
+    "utterances": ["vacation"]
+  },
+  function (request, response) {
+    response.say("You're now on vacation.");
+  });
 
 app.listen(PORT, () => console.log("Listening on port " + PORT + "."));
