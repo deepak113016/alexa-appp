@@ -30,7 +30,7 @@ alexaApp.launch(function (request, response) {
   response.say("You launched web demo!");
 });
 
-alexaApp.intent("number", {
+alexaApp.intent("greeting", {
   "slots": {},
   "utterances": ["greet me"]
 },
