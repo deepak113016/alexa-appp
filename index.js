@@ -30,12 +30,29 @@ alexaApp.launch(function (request, response) {
   response.say("welcome to web demo!");
 });
 
-alexaApp.intent("vacation",
+alexaApp.intent("AddIntent",
   {
-    "utterances": ["vacation"]
+    "slots": {
+      "firstnum": "AMAZON.NUMBER",
+      "secondnum": "AMAZON.NUMBER"
+    },
+    "utterances": [
+      "what is {firstnum} plus {secondnum}"
+    ]
   },
   function (request, response) {
-    response.say("You're now on vacation.");
+    var sum = request.slot("firstnum") + request.slot("secondnum");
+    response.say("Sum of "+request.slot("firstnum") +" and " +request.slot("secondnum") +" is "+sum);
   });
+
+
+  alexaApp.intent("AMAZON.StopIntent", {
+  "slots": {},
+  "utterances": []
+}, function (request, response) {
+  var stopOutput = "Don't You Worry. I'll be back.";
+  response.say(stopOutput);
+}
+);
 
 app.listen(PORT, () => console.log("Listening on port " + PORT + "."));
