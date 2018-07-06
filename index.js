@@ -30,8 +30,6 @@ alexaApp.launch(function (request, response) {
   response.say("You launched the app!");
 });
 
-alexaApp.dictionary = { "names": ["matt", "joe", "bob", "bill", "mary", "jane", "dawn"] };
-
 alexaApp.intent("number", {
   "slots": { "digit": "AMAZON.NUMBER" },
   "utterances": ["say the number {-|digit}"]
