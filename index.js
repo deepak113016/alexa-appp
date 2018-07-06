@@ -30,11 +30,7 @@ alexaApp.launch(function (request, response) {
   response.say("You launched web demo!");
 });
 
-alexaApp.intent("greeting", {
-  "slots": {},
-  "utterances": ["greet me"]
-},
-  function (request, response) {
+alexaApp.intent("greeting", function (request, response) {
     response.say("Namaskar India");
   }
 );
